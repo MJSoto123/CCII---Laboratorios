@@ -6,8 +6,9 @@ using namespace std;
 void intercambio(int &x, int &y){
 	int temp = x;
 	x = y;
-	y = x;
+	y = temp;
 }
+
 void invertirRec(int* primero, int* ultimo){
 	if(primero < ultimo){
 		intercambio(*primero++, *ultimo--);
@@ -28,8 +29,14 @@ int main(){
 	long tam = 1000000;
     int* array = new int[tam];
     for(int i = 0; i < tam; array[i] = i + 1, i++);
+	// for(int i = 0; i < tam; i++){
+	// 	cout << array[i] << endl;
+	// }
 	invertirIter(array, array + tam - 1);
 	// invertirRec(array, array + tam - 1);
+	// for(int i = 0; i < tam; i++){
+	// 	cout << array[i] << endl;
+	// }
 	cout << *(array + 1);
 	return 0;
 }
