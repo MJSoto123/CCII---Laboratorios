@@ -5,11 +5,9 @@ using namespace std;
 
 long long sumRec(const int *array, int tam, long sum){
     if(tam == 0){
-        // return *array;
         return sum;
     }
     else{
-        // return *array + sumRec(array + 1, tam - 1); 
         return sumRec(array + 1, tam - 1, sum + *(array));
     }
 }
@@ -21,10 +19,14 @@ long long sumIter(const int* array, int tam){
 }
 
 int main(){
-    int tam = 1000000;
+    int tam = 60000;
     int* array= new int [tam];
     for(int i = 0; i < tam; array[i] = i + 1, i++);
+    //La Suma Iterativa funciona
     cout << "Suma Iterativa: " << sumIter(array, tam) << endl;
+    //Para la suma recursiva la pila se desborda 
+    //ya que se llama 1 millon de veces a si misma antes de devolver una respuesta
+    //Para valores de /tam/ mayores a 70 000 ya no funciona
     cout << "Suma Recursiva: " << sumRec(array, tam, 0) << endl;
     delete []array;
 }

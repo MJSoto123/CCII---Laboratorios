@@ -67,11 +67,16 @@ int main()
         ptr[i] = new char[100];
     }
 
+    //Extraemos las palabras y algunas frases de un archivo .txt
     string file  = "Palabras.txt";
+    //Guardamos la cantidad de palabras extraidas
     int len = guardar(file, ptr, tam);
     printf("Largo = %d\n", len);
+
+    //Usamos la funcion del problema 3 modificada
     MergeSort(ptr, 0, len-1);
 
+    //Mostramos las palabras ordenadas
     printf("Ordenado:\n\n");
     while(len--){
         printf("%s \n",*ptr);

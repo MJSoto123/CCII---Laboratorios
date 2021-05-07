@@ -22,15 +22,19 @@ int main(){
 	char * ptr_a = new char[5000000];
 	char * ptr_b = new char[10000000];
 
+	//Guardamos las frases, ya que /b/ debe contener a /a/ como maximo
+	//otorgamos la 500 000  a cada cadena como largo maximo
 	printf("Ingrese la primera parte de la frase: \n");
     cin.getline(ptr_b,500000);
 
 	printf("Ingrese el complemento de la frase: \n");
     cin.getline(ptr_a,500000);
 
+	//Medimos los largos de cada cadena para luego concatenar
 	int len_a = sizeIter(ptr_a);
 	int len_b = sizeIter(ptr_b);
 
+	//Contatenamos
 	concatString(ptr_a, len_a, ptr_b, len_b);
 	printf(ptr_b);
 }

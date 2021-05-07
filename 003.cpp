@@ -42,16 +42,17 @@ void MergeSort(int* lista, int ini, int fin){
 
 int main()
 {
-    int tam = 100000;
+    int tam = 520000;
     int * ptr = new int[tam];
+
+    //Numeros aleatorios
     srand(time(NULL));
     for(int i = 0; i < tam; ptr[i] = rand()%50, i++);
-    // for(int i = 0; i < tam; i++){
-    //     cout << ptr[i] << endl;
-    // }
-    cout << endl;
-    MergeSort(ptr, 0, tam-1);
 
+    //Funciona hasta 520 000  aprox
+    MergeSort(ptr, 0, tam-1);
+    
+    //Se muestran cada 10 000 los numeros ya ordenados
     for(int i = 0; i < tam; i+= 10000){
         cout << i << " " << ptr[i] << endl;
     }

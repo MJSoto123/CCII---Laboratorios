@@ -21,8 +21,12 @@ int sizeRec(char * ptr){
 
 int main(){
 	char * ptr = new char[10000000];
+
+	//Guarda la frase
     printf("Ingrese la frase que quiera medir: \n");
     cin.getline(ptr,1000000);
+
+	//Mediciones
 	printf("\nMedicion Iterativa: %d \n", sizeIter(ptr));
 	printf("Medicion Recursiva: %d \n\n", sizeRec(ptr));
 }
