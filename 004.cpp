@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 
-int sizeIter(const char * ptr){
+int sizeIter(char * ptr){
 	int cont = 0;
 	while(*ptr != '\0'){
 		cont++;
@@ -11,7 +11,7 @@ int sizeIter(const char * ptr){
 	return cont;
 }
 
-int sizeRec(const char * ptr){
+int sizeRec(char * ptr){
 	if(*(ptr) == '\0'){
 		return 0;
 	}else{
@@ -20,10 +20,9 @@ int sizeRec(const char * ptr){
 }
 
 int main(){
-	string pharse = "30 esta es una frase de prueba";
-	const char * ptr = &pharse[0];
-	// printf("Ingrese la frase que quiera medir: \n");
-	// getline(cin, pharse);
+	char * ptr = new char[10000000];
+    printf("Ingrese la frase que quiera medir: \n");
+    cin.getline(ptr,1000000);
 	printf("\nMedicion Iterativa: %d \n", sizeIter(ptr));
 	printf("Medicion Recursiva: %d \n\n", sizeRec(ptr));
 }
